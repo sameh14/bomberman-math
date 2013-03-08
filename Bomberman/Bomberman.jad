@@ -1,9 +1,9 @@
-MIDlet-1: Bomberman Math,/icons/icon-32.png,screens.MidletGame
+MIDlet-1: Bomberman Math,/icons/icon-32.png,screens.Bomberman
 MIDlet-Jar-URL: Bomberman.jar
 MIDlet-Icon: /icons/icon-32.png
 MicroEdition-Configuration: CLDC-1.0
 MIDlet-Version: 1.0.0
-MIDlet-Name: Bomberman Midlet Suite
+MIDlet-Name: Bomberman Math
 MIDlet-Description: Bomberman Math 2D arcade game.
 MIDlet-Vendor: Midlet Suite Vendor
 MicroEdition-Profile: MIDP-1.0

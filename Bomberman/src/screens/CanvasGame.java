@@ -41,12 +41,12 @@ public class CanvasGame extends GameCanvas implements Runnable {
 	protected long prevUpdateTime = -1;
 	protected boolean isRunning = true;
 	protected Thread runner = new Thread(this);
-	public MidletGame midlet;
+	public Bomberman midlet;
 
 	protected TiledLayer background;
 	protected TiledLayer hud;
 
-	protected CanvasGame(boolean suppressKeyEvents, MidletGame _midlet, ResMgr _resources) {
+	protected CanvasGame(boolean suppressKeyEvents, Bomberman _midlet, ResMgr _resources) {
 		super(suppressKeyEvents);
 		setFullScreenMode(true);
 		resources = _resources;
@@ -141,7 +141,7 @@ public class CanvasGame extends GameCanvas implements Runnable {
 			paintAll();
 			flushGraphics();
 			try {
-				Thread.sleep(MidletGame.TIME_BETWEEN_FRAMES);
+				Thread.sleep(Bomberman.TIME_BETWEEN_FRAMES);
 			} catch (Exception ex) {}
 		}
 	}
@@ -173,10 +173,10 @@ public class CanvasGame extends GameCanvas implements Runnable {
 	public void updateAll() {
 		// time delay
 		long curUpdateTime = System.currentTimeMillis();
-		long actualDelay = MidletGame.TIME_BETWEEN_FRAMES;
+		long actualDelay = Bomberman.TIME_BETWEEN_FRAMES;
 		if (prevUpdateTime != -1)
 			actualDelay = curUpdateTime - prevUpdateTime;
-		double dt = 1.0 * actualDelay / MidletGame.TIME_BETWEEN_FRAMES;
+		double dt = 1.0 * actualDelay / Bomberman.TIME_BETWEEN_FRAMES;
 		// background
 		for (int i = 0; i < map.grid.length; i++)
 			for (int j = 0; j < map.grid[i].length; j++)

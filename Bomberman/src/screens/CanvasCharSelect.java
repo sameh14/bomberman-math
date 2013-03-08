@@ -21,12 +21,12 @@ public class CanvasCharSelect extends GameCanvas implements Runnable {
 	protected Thread runner = new Thread(this);
 	protected boolean isRunning = false;
 	protected ResMgr resources;
-	protected MidletGame midlet;
+	protected Bomberman midlet;
 
 	protected TiledLayer chars;
 	protected int cursor = 0, num_chars_available, key_delay = 0, cheat_counter = 0;
 
-	protected CanvasCharSelect(boolean suppressKeyEvents, MidletGame _midlet, ResMgr _resources, int _num_chars_available) {
+	protected CanvasCharSelect(boolean suppressKeyEvents, Bomberman _midlet, ResMgr _resources, int _num_chars_available) {
 		super(suppressKeyEvents);
 		setFullScreenMode(true);
 		resources = _resources;
@@ -62,7 +62,7 @@ public class CanvasCharSelect extends GameCanvas implements Runnable {
 			paintAll();
 			flushGraphics();
 			try {
-				Thread.sleep(MidletGame.TIME_BETWEEN_FRAMES);
+				Thread.sleep(Bomberman.TIME_BETWEEN_FRAMES);
 			} catch (Exception ex) {}
 		}
 	}
