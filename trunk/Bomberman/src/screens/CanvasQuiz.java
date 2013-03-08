@@ -25,13 +25,13 @@ public class CanvasQuiz extends GameCanvas implements Runnable {
 	protected Thread runner = new Thread(this);
 	protected boolean isRunning = false;
 	protected ResMgr resources;
-	protected MidletGame midlet;
+	protected Bomberman midlet;
 
 	protected TiledLayer quiz;
 	protected int[] quiz_array = new int[6];
 	protected int hidden_value, counter;
 
-	protected CanvasQuiz(boolean suppressKeyEvents, MidletGame _midlet, ResMgr _resources) {
+	protected CanvasQuiz(boolean suppressKeyEvents, Bomberman _midlet, ResMgr _resources) {
 		super(suppressKeyEvents);
 		setFullScreenMode(true);
 		resources = _resources;
@@ -109,7 +109,7 @@ public class CanvasQuiz extends GameCanvas implements Runnable {
 			paintAll();
 			flushGraphics();
 			try {
-				Thread.sleep(MidletGame.TIME_BETWEEN_FRAMES);
+				Thread.sleep(Bomberman.TIME_BETWEEN_FRAMES);
 			} catch (Exception ex) {}
 		}
 	}

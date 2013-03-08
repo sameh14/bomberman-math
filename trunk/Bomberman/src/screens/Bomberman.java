@@ -15,7 +15,7 @@ import javax.microedition.midlet.MIDletStateChangeException;
 import resource.FileMgr;
 import resource.ResMgr;
 
-public class MidletGame extends MIDlet {
+public class Bomberman extends MIDlet {
 
 	public static final long FRAMES_PER_SECOND = 15;
 	public static final long TIME_BETWEEN_FRAMES = 1000 / FRAMES_PER_SECOND;
@@ -28,7 +28,7 @@ public class MidletGame extends MIDlet {
 	protected int level, selectedChar, score, num_chars_available = 1;
 	private GameCanvas canvas = null;
 
-	public MidletGame() {}
+	public Bomberman() {}
 
 	protected void destroyApp(boolean arg0) throws MIDletStateChangeException {
 		notifyDestroyed();

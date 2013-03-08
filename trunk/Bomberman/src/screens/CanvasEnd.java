@@ -23,13 +23,13 @@ public class CanvasEnd extends GameCanvas implements Runnable {
 	protected Thread runner = new Thread(this);
 	protected boolean isRunning = false;
 	protected ResMgr resources;
-	protected MidletGame midlet;
+	protected Bomberman midlet;
 
 	protected int counter;
 	protected TiledLayer score, back;
 	protected String message;
 
-	protected CanvasEnd(boolean suppressKeyEvents, MidletGame _midlet, ResMgr _resources, int _score, String _message) {
+	protected CanvasEnd(boolean suppressKeyEvents, Bomberman _midlet, ResMgr _resources, int _score, String _message) {
 		super(suppressKeyEvents);
 		setFullScreenMode(true);
 		resources = _resources;
@@ -81,7 +81,7 @@ public class CanvasEnd extends GameCanvas implements Runnable {
 			paintAll();
 			flushGraphics();
 			try {
-				Thread.sleep(MidletGame.TIME_BETWEEN_FRAMES);
+				Thread.sleep(Bomberman.TIME_BETWEEN_FRAMES);
 			} catch (Exception ex) {}
 		}
 	}
