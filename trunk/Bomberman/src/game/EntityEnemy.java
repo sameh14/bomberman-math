@@ -31,7 +31,7 @@ public class EntityEnemy extends Entity {
 	public void update(CanvasGame game, double dt) {
 		super.update(game, dt);
 		// MAKE DECISION
-		if ((pos.x - game.GRID / 2) % game.GRID <= 2 && (pos.y - game.GRID / 2) % game.GRID <= 2) {
+		if ((int) (pos.x - game.GRID / 2) % game.GRID <= 4 && (int) (pos.y - game.GRID / 2) % game.GRID <= 4) {
 			// find possible directions
 			Vector possible = new Vector();
 			for (int i = 0; i < Map.mv.length; i++) {
