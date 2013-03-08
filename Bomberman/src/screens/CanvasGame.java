@@ -151,6 +151,7 @@ public class CanvasGame extends GameCanvas implements Runnable {
 		g.setColor(0x222222);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		// view
+		g.translate(0, GRID);
 		view.paint(this, g);
 		// background
 		background.paint(g);
@@ -161,11 +162,12 @@ public class CanvasGame extends GameCanvas implements Runnable {
 		paintVector(bombermen, g);
 		paintVector(enemies, g);
 		// hud
-		getGraphics().setColor(0x222222);
-		getGraphics().fillRect(0, 0, getWidth(), GRID);
+		g.translate(-g.getTranslateX(), -g.getTranslateY());
+		g.setColor(0x000000);
+		g.fillRect(0, 0, getWidth(), GRID);
 		((EntityBomberman) view.target).paintHUD(this, hud);
-		getGraphics().translate(Math.max(0, getWidth() / 2 - hud.getColumns() * hud.getCellWidth() / 2), 0);
-		hud.paint(getGraphics());
+		g.translate(Math.max(0, getWidth() / 2 - hud.getColumns() * hud.getCellWidth() / 2), 0);
+		hud.paint(g);
 	}
 
 	public void updateAll() {
